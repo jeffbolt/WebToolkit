@@ -13,22 +13,22 @@ namespace WebToolkit {
     public partial class Sparkline {
         
         /// <summary>
-        /// pnlSparkline control.
+        /// divSparkline control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlSparkline;
+        protected global::System.Web.UI.WebControls.Panel divSparkline;
         
         /// <summary>
-        /// lblToolTip control.
+        /// tooltip control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblToolTip;
+        protected global::System.Web.UI.WebControls.Label tooltip;
         
         /// <summary>
         /// svg control.
@@ -40,13 +40,13 @@ namespace WebToolkit {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl svg;
         
         /// <summary>
-        /// lgrad control.
+        /// gradient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lgrad;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl gradient;
         
         /// <summary>
         /// mask control.

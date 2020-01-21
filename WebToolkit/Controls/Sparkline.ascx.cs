@@ -1,30 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Diagnostics;
 using System.Text;
 
 namespace WebToolkit
 {
-    public struct Point
+	public struct Point
     {
         public double x;
         public double y;
     }
+
     public partial class Sparkline : System.Web.UI.UserControl
     {
-        public List<Point> Points { get; set; }
+		//public readonly string[] GradientColors = { "#d6e685", "#8cc665", "#44a340", "#1e6823" };
+		public readonly string[] GradientColors = { "#c6e48b", "#7bc96f", "#239a3b", "#196127" };
+
+		public List<Point> Points { get; set; }
 
         public int SparklineID { get; set; }
 
 		public string ToolTip
 		{
-			get { return lblToolTip.Attributes["aria-label"]; }
-			set { lblToolTip.Attributes["aria-label"] = value; }
+			get { return tooltip.Attributes["aria-label"]; }
+			set { tooltip.Attributes["aria-label"] = value; }
 		}
+
 		protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -33,10 +34,10 @@ namespace WebToolkit
 				//SparklineID = Convert.ToInt32(new Random().NextDouble() * 1000);
                 //SparklineID = MathHelper.RandomNumber(0, 100000);
 				Debug.WriteLine("SparklineID: {0}", SparklineID);
-				pnlSparkline.ID += SparklineID;
-                lblToolTip.ID += SparklineID;
+				divSparkline.ID += SparklineID;
+				tooltip.ID += SparklineID;
                 svg.ID += SparklineID;
-                lgrad.ID += SparklineID;
+				gradient.ID += SparklineID;
                 polyline.ID += SparklineID;
                 mask.ID += SparklineID;
                 rect.ID += SparklineID;
@@ -44,7 +45,7 @@ namespace WebToolkit
 
                 if (Points != null && Points.Count > 0) LoadPoints();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex);
             }
@@ -62,7 +63,7 @@ namespace WebToolkit
             polyline.Attributes.Remove("points");
             polyline.Attributes.Add("points", sb.ToString());
             rect.Style.Remove("fill");
-            rect.Style.Add("fill", "url(#" + lgrad.ID + ")");
+            rect.Style.Add("fill", "url(#" + gradient.ID + ")");
             rect.Style.Remove("mask");
             rect.Style.Add("mask", "url(#" + mask.ID + ")");
         }

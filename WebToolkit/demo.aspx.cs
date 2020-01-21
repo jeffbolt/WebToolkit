@@ -12,6 +12,8 @@ namespace WebToolkit
 
 		protected void Page_Load(object sender, EventArgs e)
         {
+			//CpuMeter.Display();
+
 			/*System.Text.StringBuilder s = new System.Text.StringBuilder();
             Random rnd = new Random();
 
@@ -31,7 +33,7 @@ namespace WebToolkit
                 Sparkline uc = CreateSparkline("Sparkline " + i);
 				uc.ID = "sparkline" + i;
 				uc.SparklineID = i;
-				phGraphs.Controls.Add(uc);
+				phSparklines.Controls.Add(uc);
             }
         }
 

@@ -6,13 +6,27 @@
 <head runat="server">
     <title>Sparkline Demo</title>
     <meta name="viewport" content="width=device-width" />
-    <link href="/css/svg.css" rel="stylesheet" />
+	<link href="/controls/sparkline.css" rel="stylesheet" />
+
+	<style type="text/css">
+		body {
+			padding: 0 10px;
+			font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+		}
+
+		code, pre {
+			font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+		}
+	</style>
 </head>
-<body style="padding: 10px">
-    <form id="form1" runat="server">
-    <div>
-        <asp:PlaceHolder ID="phGraphs" runat="server"></asp:PlaceHolder>
-    </div>
-    </form>
+<body>
+	<form id="Demo" runat="server">
+		<h4>
+			Sparkline Demo
+		</h4>
+		<div>
+			<asp:PlaceHolder ID="phSparklines" runat="server"></asp:PlaceHolder>
+		</div>
+	</form>
 </body>
 </html>

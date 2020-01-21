@@ -13,21 +13,21 @@ namespace WebToolkit {
     public partial class demo {
         
         /// <summary>
-        /// form1 control.
+        /// Demo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm Demo;
         
         /// <summary>
-        /// phGraphs control.
+        /// phSparklines control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phGraphs;
+        protected global::System.Web.UI.WebControls.PlaceHolder phSparklines;
     }
 }
