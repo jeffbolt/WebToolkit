@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -77,7 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controls\Sparkline.ascx" />
-    <Content Include="demo.aspx" />
+    <Content Include="graphs.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -89,12 +90,12 @@
     <Compile Include="Controls\Sparkline.ascx.designer.cs">
       <DependentUpon>Sparkline.ascx</DependentUpon>
     </Compile>
-    <Compile Include="demo.aspx.cs">
-      <DependentUpon>demo.aspx</DependentUpon>
+    <Compile Include="graphs.aspx.cs">
+      <DependentUpon>graphs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="demo.aspx.designer.cs">
-      <DependentUpon>demo.aspx</DependentUpon>
+    <Compile Include="graphs.aspx.designer.cs">
+      <DependentUpon>graphs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

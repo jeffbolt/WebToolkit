@@ -5,9 +5,9 @@ using Rng = System.Security.Cryptography.RNGCryptoServiceProvider;
 
 namespace WebToolkit
 {
-	public partial class demo : System.Web.UI.Page
+	public partial class graphs : System.Web.UI.Page
     {
-		private Rng csprng = new Rng();
+		private readonly Rng csprng = new Rng();
 		private Random rnd;
 
 		protected void Page_Load(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace WebToolkit
                 Sparkline uc = CreateSparkline("Sparkline " + i);
 				uc.ID = "sparkline" + i;
 				uc.SparklineID = i;
-				phGraphs.Controls.Add(uc);
+                phSparklines.Controls.Add(uc);
             }
         }
 
@@ -40,17 +40,16 @@ namespace WebToolkit
             Sparkline ctrl = null;
             List<Point> Points = new List<Point>();
 			double x = 0;
-			double y = 0;
 
-            try
-            {
+			try
+			{
                 // Create a random set of points
                 for (int i = 0; i < 52; i++)
                 {
 					Point p = new Point();
-					//y = MathHelper.RandomNumber(0, 29);
-					y = Convert.ToDouble(rnd.Next(0, 29));
-					p.x = x;
+					double y = Convert.ToDouble(rnd.Next(0, 29));
+                    //y = MathHelper.RandomNumber(0, 29);
+                    p.x = x;
                     p.y = y;
 					//Debug.WriteLine("x:{0},y:{1}", p.x, p.y);
                     Points.Add(p);

@@ -2,14 +2,12 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Threading;
 using System.Threading.Tasks;
 
 public class RandomNumber
 {
-    static Object randLock, numericLock;
+    static object randLock, numericLock;
     static Random rand;
     static CancellationTokenSource source;
     double totalValue = 0.0;
@@ -18,8 +16,8 @@ public class RandomNumber
     public RandomNumber()
     {
         rand = new Random();
-        randLock = new Object();
-        numericLock = new Object();
+        randLock = new object();
+        numericLock = new object();
         source = new CancellationTokenSource();
     }
 
@@ -94,7 +92,7 @@ public class RandomNumber
         {
             foreach (Exception inner in e.InnerExceptions)
             {
-                TaskCanceledException canc = inner as TaskCanceledException;
+				TaskCanceledException canc = inner as TaskCanceledException;
                 if (canc != null)
                     Console.WriteLine("Task #{0} cancelled.", canc.Task.Id);
                 else
